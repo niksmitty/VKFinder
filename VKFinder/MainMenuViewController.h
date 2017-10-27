@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainMenuViewController.h
 //  VKFinder
 //
 //  Created by Nikita Votyakov on 27.10.17.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <VKSdk.h>
 
-@interface ViewController : UIViewController<VKSdkDelegate>
-
+@interface MainMenuViewController : UIViewController
 
 @end
-
