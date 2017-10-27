@@ -17,6 +17,9 @@
 		AB06D0EA1FA36884006AF6AD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0E91FA36884006AF6AD /* Podfile */; };
 		AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */; };
 		AB06D0EF1FA3826E006AF6AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0EE1FA3826E006AF6AD /* .gitignore */; };
+		AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */; };
+		AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F41FA38D28006AF6AD /* PostsViewController.m */; };
+		AB06D0F91FA390B1006AF6AD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F81FA390B1006AF6AD /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,12 @@
 		AB06D0EB1FA37CC4006AF6AD /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		AB06D0EE1FA3826E006AF6AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkAPIDataManager.h; sourceTree = "<group>"; };
+		AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkAPIDataManager.m; sourceTree = "<group>"; };
+		AB06D0F31FA38D28006AF6AD /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
+		AB06D0F41FA38D28006AF6AD /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
+		AB06D0F71FA390B1006AF6AD /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		AB06D0F81FA390B1006AF6AD /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		C4A3F4CF2AEEDF9EE278EDAA /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,12 +91,17 @@
 		AB06D0D11FA36646006AF6AD /* VKFinder */ = {
 			isa = PBXGroup;
 			children = (
+				AB06D0F61FA39093006AF6AD /* Model */,
+				AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */,
+				AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */,
 				AB06D0D51FA36646006AF6AD /* AppDelegate.h */,
 				AB06D0D61FA36646006AF6AD /* AppDelegate.m */,
 				AB06D0D81FA36646006AF6AD /* ViewController.h */,
 				AB06D0D91FA36646006AF6AD /* ViewController.m */,
 				AB06D0EB1FA37CC4006AF6AD /* MainMenuViewController.h */,
 				AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */,
+				AB06D0F31FA38D28006AF6AD /* PostsViewController.h */,
+				AB06D0F41FA38D28006AF6AD /* PostsViewController.m */,
 				AB06D0DB1FA36646006AF6AD /* Main.storyboard */,
 				AB06D0DE1FA36646006AF6AD /* Assets.xcassets */,
 				AB06D0E01FA36646006AF6AD /* LaunchScreen.storyboard */,
@@ -103,6 +117,15 @@
 				AB06D0D31FA36646006AF6AD /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB06D0F61FA39093006AF6AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB06D0F71FA390B1006AF6AD /* Post.h */,
+				AB06D0F81FA390B1006AF6AD /* Post.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B2071B08446299C7CFFD8985 /* Pods */ = {
@@ -247,8 +270,11 @@
 			files = (
 				AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */,
 				AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */,
+				AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */,
+				AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */,
 				AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */,
 				AB06D0D41FA36646006AF6AD /* main.m in Sources */,
+				AB06D0F91FA390B1006AF6AD /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
