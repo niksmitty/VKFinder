@@ -28,4 +28,9 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+-(IBAction)getPosts:(id)sender
+{
+    [self performSegueWithIdentifier:@"GET_POSTS" sender:self];
+}
+
 @end

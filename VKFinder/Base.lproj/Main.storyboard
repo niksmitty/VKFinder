@@ -57,12 +57,77 @@
                     <view key="view" contentMode="scaleToFill" id="2vk-bs-c2b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oso-0l-aPX">
+                                <rect key="frame" x="152" y="318" width="70" height="30"/>
+                                <state key="normal" title="Get posts"/>
+                                <connections>
+                                    <action selector="getPosts:" destination="GnZ-MX-WZt" eventType="touchUpInside" id="e6D-bi-hKl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CNT-Tz-6On" firstAttribute="top" secondItem="Oso-0l-aPX" secondAttribute="bottom" constant="319" id="A7f-cF-fX9"/>
+                            <constraint firstItem="Oso-0l-aPX" firstAttribute="leading" secondItem="2vk-bs-c2b" secondAttribute="leading" constant="152" id="PKi-j7-A58"/>
+                            <constraint firstAttribute="trailing" secondItem="Oso-0l-aPX" secondAttribute="trailing" constant="153" id="W54-Gs-ehl"/>
+                            <constraint firstItem="Oso-0l-aPX" firstAttribute="top" secondItem="cHX-0X-IYX" secondAttribute="bottom" constant="254" id="mtI-8b-DoV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="b0r-KV-5GZ" kind="show" identifier="GET_POSTS" id="QhX-Yv-3SK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxu-sx-oGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942" y="124"/>
+            <point key="canvasLocation" x="1941.5999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Posts View Controller-->
+        <scene sceneID="oP1-Hv-GhO">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="b0r-KV-5GZ" customClass="PostsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="azK-n5-nhU"/>
+                        <viewControllerLayoutGuide type="bottom" id="hzY-Sr-zC5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CEY-kw-zYy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9yq-Xt-Qrv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" id="hm1-eB-hgK">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hm1-eB-hgK" id="FlF-Rg-qst">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="b0r-KV-5GZ" id="uxL-X7-B6Q"/>
+                                    <outlet property="delegate" destination="b0r-KV-5GZ" id="don-38-2hd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9yq-Xt-Qrv" firstAttribute="top" secondItem="azK-n5-nhU" secondAttribute="bottom" id="FL4-4S-WC4"/>
+                            <constraint firstItem="hzY-Sr-zC5" firstAttribute="top" secondItem="9yq-Xt-Qrv" secondAttribute="bottom" id="PZz-QB-dXs"/>
+                            <constraint firstItem="9yq-Xt-Qrv" firstAttribute="leading" secondItem="CEY-kw-zYy" secondAttribute="leading" id="RQg-RT-29f"/>
+                            <constraint firstAttribute="trailing" secondItem="9yq-Xt-Qrv" secondAttribute="trailing" id="V4o-vt-alG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="9yq-Xt-Qrv" id="8kJ-Wx-EEK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMu-XH-tjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="asw-Kx-spB">
