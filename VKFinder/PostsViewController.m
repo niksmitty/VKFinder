@@ -64,6 +64,8 @@
     [posts addObject:postItem];
 }
 
+#pragma mark - Table View Datasource
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [posts count];
