@@ -22,6 +22,8 @@
     
     self.navigationItem.title = @"Posts";
     
+    bottomPanel.hidden = NO;
+    
     posts = [NSMutableArray new];
     
     apiManager = [VkAPIDataManager new];
@@ -45,6 +47,12 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [tableView reloadData];
     });
+    
+    progressView.progress = percent;
+    if (percent == 1.)
+    {
+        bottomPanel.hidden = YES;
+    }
 }
 
 -(void)addNewPost:(NSDictionary*)postInfo

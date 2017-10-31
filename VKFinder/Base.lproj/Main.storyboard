@@ -112,16 +112,38 @@
                                     <outlet property="delegate" destination="b0r-KV-5GZ" id="don-38-2hd"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tmK-Ss-OY8">
+                                <rect key="frame" x="0.0" y="653" width="375" height="14"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-Se-af3">
+                                        <rect key="frame" x="10" y="6" width="355" height="2"/>
+                                        <color key="progressTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </progressView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aHY-Se-af3" firstAttribute="leading" secondItem="tmK-Ss-OY8" secondAttribute="leading" constant="10" id="Oy7-Re-X1n"/>
+                                    <constraint firstAttribute="bottom" secondItem="aHY-Se-af3" secondAttribute="bottom" constant="6" id="PPg-Pn-N0R"/>
+                                    <constraint firstAttribute="trailing" secondItem="aHY-Se-af3" secondAttribute="trailing" constant="10" id="oRS-qI-EIL"/>
+                                    <constraint firstItem="aHY-Se-af3" firstAttribute="top" secondItem="tmK-Ss-OY8" secondAttribute="top" constant="6" id="u2r-Gr-Sx5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tmK-Ss-OY8" firstAttribute="leading" secondItem="CEY-kw-zYy" secondAttribute="leading" id="8gn-dt-vmg"/>
                             <constraint firstItem="9yq-Xt-Qrv" firstAttribute="top" secondItem="azK-n5-nhU" secondAttribute="bottom" id="FL4-4S-WC4"/>
                             <constraint firstItem="hzY-Sr-zC5" firstAttribute="top" secondItem="9yq-Xt-Qrv" secondAttribute="bottom" id="PZz-QB-dXs"/>
                             <constraint firstItem="9yq-Xt-Qrv" firstAttribute="leading" secondItem="CEY-kw-zYy" secondAttribute="leading" id="RQg-RT-29f"/>
                             <constraint firstAttribute="trailing" secondItem="9yq-Xt-Qrv" secondAttribute="trailing" id="V4o-vt-alG"/>
+                            <constraint firstAttribute="trailing" secondItem="tmK-Ss-OY8" secondAttribute="trailing" id="v0d-AN-ahi"/>
+                            <constraint firstItem="hzY-Sr-zC5" firstAttribute="top" secondItem="tmK-Ss-OY8" secondAttribute="bottom" id="wDa-N9-KlY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomPanel" destination="tmK-Ss-OY8" id="Pny-TR-ZmD"/>
+                        <outlet property="progressView" destination="aHY-Se-af3" id="JAJ-jl-eS6"/>
                         <outlet property="tableView" destination="9yq-Xt-Qrv" id="8kJ-Wx-EEK"/>
                     </connections>
                 </viewController>

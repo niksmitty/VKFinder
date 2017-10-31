@@ -12,6 +12,8 @@
 @interface PostsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VkAPIDataManagerDelegate>
 {
     IBOutlet UITableView *tableView;
+    IBOutlet UIProgressView *progressView;
+    IBOutlet UIView *bottomPanel;
     
     VkAPIDataManager *apiManager;
 }
