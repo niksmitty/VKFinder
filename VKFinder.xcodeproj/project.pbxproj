@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AE34AA0CEE3B8A6070D718C /* libPods-VKFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8688672CCBA5A1F10E53B85F /* libPods-VKFinder.a */; };
+		40220B549D4A874493C87AFB /* libPods-VKFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE559720414107443A614C5B /* libPods-VKFinder.a */; };
 		AB06D0D41FA36646006AF6AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D31FA36646006AF6AD /* main.m */; };
 		AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D61FA36646006AF6AD /* AppDelegate.m */; };
 		AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D91FA36646006AF6AD /* ViewController.m */; };
@@ -20,11 +20,11 @@
 		AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */; };
 		AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F41FA38D28006AF6AD /* PostsViewController.m */; };
 		AB06D0F91FA390B1006AF6AD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F81FA390B1006AF6AD /* Post.m */; };
+		AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A911FA8726900E55E46 /* PostRLMObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C47E82443517C49F067537A /* Pods-VKFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.release.xcconfig"; sourceTree = "<group>"; };
-		8688672CCBA5A1F10E53B85F /* libPods-VKFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE5396222C780D8E9329BCA /* Pods-VKFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.release.xcconfig"; sourceTree = "<group>"; };
 		AB06D0CF1FA36646006AF6AD /* VKFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB06D0D31FA36646006AF6AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB06D0D51FA36646006AF6AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 		AB06D0DE1FA36646006AF6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB06D0E11FA36646006AF6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB06D0E31FA36646006AF6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB06D0E91FA36884006AF6AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		AB06D0E91FA36884006AF6AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB06D0EB1FA37CC4006AF6AD /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		AB06D0EE1FA3826E006AF6AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -45,7 +45,10 @@
 		AB06D0F41FA38D28006AF6AD /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		AB06D0F71FA390B1006AF6AD /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		AB06D0F81FA390B1006AF6AD /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		C4A3F4CF2AEEDF9EE278EDAA /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		AB404A901FA8726900E55E46 /* PostRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostRLMObject.h; sourceTree = "<group>"; };
+		AB404A911FA8726900E55E46 /* PostRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostRLMObject.m; sourceTree = "<group>"; };
+		D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		DE559720414107443A614C5B /* libPods-VKFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,19 +56,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AE34AA0CEE3B8A6070D718C /* libPods-VKFinder.a in Frameworks */,
+				40220B549D4A874493C87AFB /* libPods-VKFinder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10A0A48373A0FCABEC8405A1 /* Frameworks */ = {
+		0F806F721684D17817801FCE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8688672CCBA5A1F10E53B85F /* libPods-VKFinder.a */,
+				D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */,
+				9BE5396222C780D8E9329BCA /* Pods-VKFinder.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		AB06D0C61FA36646006AF6AD = {
@@ -75,8 +79,8 @@
 				AB06D0E91FA36884006AF6AD /* Podfile */,
 				AB06D0D11FA36646006AF6AD /* VKFinder */,
 				AB06D0D01FA36646006AF6AD /* Products */,
-				B2071B08446299C7CFFD8985 /* Pods */,
-				10A0A48373A0FCABEC8405A1 /* Frameworks */,
+				0F806F721684D17817801FCE /* Pods */,
+				CF5790316CD734ACC04C1F25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,17 +128,18 @@
 			children = (
 				AB06D0F71FA390B1006AF6AD /* Post.h */,
 				AB06D0F81FA390B1006AF6AD /* Post.m */,
+				AB404A901FA8726900E55E46 /* PostRLMObject.h */,
+				AB404A911FA8726900E55E46 /* PostRLMObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		B2071B08446299C7CFFD8985 /* Pods */ = {
+		CF5790316CD734ACC04C1F25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C4A3F4CF2AEEDF9EE278EDAA /* Pods-VKFinder.debug.xcconfig */,
-				2C47E82443517C49F067537A /* Pods-VKFinder.release.xcconfig */,
+				DE559720414107443A614C5B /* libPods-VKFinder.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,12 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB06D0E61FA36646006AF6AD /* Build configuration list for PBXNativeTarget "VKFinder" */;
 			buildPhases = (
-				B52D82AB1A931E5828504ED5 /* [CP] Check Pods Manifest.lock */,
+				3219CF1C788E3035068E841B /* [CP] Check Pods Manifest.lock */,
 				AB06D0CB1FA36646006AF6AD /* Sources */,
 				AB06D0CC1FA36646006AF6AD /* Frameworks */,
 				AB06D0CD1FA36646006AF6AD /* Resources */,
-				1F2AD8E89AE37CA58971AF8D /* [CP] Embed Pods Frameworks */,
-				FC426BA9E7102DE3A799B278 /* [CP] Copy Pods Resources */,
+				60DE9382381496AD6CC6A740 /* [CP] Embed Pods Frameworks */,
+				E174BEA3490A011286D39AAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,22 +215,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F2AD8E89AE37CA58971AF8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B52D82AB1A931E5828504ED5 /* [CP] Check Pods Manifest.lock */ = {
+		3219CF1C788E3035068E841B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,7 +233,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC426BA9E7102DE3A799B278 /* [CP] Copy Pods Resources */ = {
+		60DE9382381496AD6CC6A740 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E174BEA3490A011286D39AAE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +275,7 @@
 			files = (
 				AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */,
 				AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */,
+				AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */,
 				AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */,
 				AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */,
 				AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */,
@@ -394,7 +400,7 @@
 		};
 		AB06D0E71FA36646006AF6AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4A3F4CF2AEEDF9EE278EDAA /* Pods-VKFinder.debug.xcconfig */;
+			baseConfigurationReference = D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 42V7DCQUR8;
@@ -407,7 +413,7 @@
 		};
 		AB06D0E81FA36646006AF6AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C47E82443517C49F067537A /* Pods-VKFinder.release.xcconfig */;
+			baseConfigurationReference = 9BE5396222C780D8E9329BCA /* Pods-VKFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 42V7DCQUR8;
