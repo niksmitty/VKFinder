@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "VkAPIDataManager.h"
+#import "PostRLMObject.h"
 
 @interface PostsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VkAPIDataManagerDelegate>
 {
-    IBOutlet UITableView *tableView;
     IBOutlet UIProgressView *progressView;
     IBOutlet UIView *bottomPanel;
     
     VkAPIDataManager *apiManager;
+    
+    RLMResults *tableDataArray;
+    RLMNotificationToken *realmNotification;
 }
 
-@property (nonatomic, strong) NSMutableArray *posts;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
