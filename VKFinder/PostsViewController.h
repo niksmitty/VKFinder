@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "VkAPIDataManager.h"
 #import "PostRLMObject.h"
+#import "FilterViewController.h"
 
-@interface PostsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VkAPIDataManagerDelegate>
+@interface PostsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VkAPIDataManagerDelegate, UIPopoverPresentationControllerDelegate, FilterDelegate>
 {
     IBOutlet UIProgressView *progressView;
     IBOutlet UIView *bottomPanel;

@@ -63,9 +63,28 @@
     
     bottomPanel.hidden = YES;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                           target:self
-                                                                                           action:@selector(refreshAllItems)];
+    UIImage *refreshImage = [UIImage imageNamed:@"refreshAllItems"];
+    UIButton *refreshButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [refreshButton setBackgroundImage:refreshImage forState:UIControlStateNormal];
+    [refreshButton addTarget:self action:@selector(refreshAllItems) forControlEvents:UIControlEventTouchUpInside];
+    [refreshButton setShowsTouchWhenHighlighted:YES];
+    UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithCustomView:refreshButton];
+    
+    UIImage *filterImage = [UIImage imageNamed:@"addFilters"];
+    UIButton *filterButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [filterButton setBackgroundImage:filterImage forState:UIControlStateNormal];
+    [filterButton addTarget:self action:@selector(filterItems:) forControlEvents:UIControlEventTouchUpInside];
+    [filterButton setShowsTouchWhenHighlighted:YES];
+    UIBarButtonItem *filterBtn = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
+    
+    UIImage *resetFiltersImage = [UIImage imageNamed:@"resetFilters"];
+    UIButton *resetFiltersButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [resetFiltersButton setBackgroundImage:resetFiltersImage forState:UIControlStateNormal];
+    [resetFiltersButton addTarget:self action:@selector(resetFilters) forControlEvents:UIControlEventTouchUpInside];
+    [resetFiltersButton setShowsTouchWhenHighlighted:YES];
+    UIBarButtonItem *resetFiltersBtn = [[UIBarButtonItem alloc] initWithCustomView:resetFiltersButton];
+    
+    self.navigationItem.rightBarButtonItems = @[refreshBtn, filterBtn, resetFiltersBtn];
 }
 
 #pragma mark - VkAPIDataManager Delegate
@@ -128,7 +147,26 @@
     bottomPanel.hidden = NO;
     progressView.progress = 0.;
 
-    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443", VK_API_COUNT: @(100)}];
+    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{VK_API_OWNER_ID: @"-67648156"/*@"-86830443"*/, VK_API_COUNT: @(100)}];
+}
+
+-(void)filterItems:(id)sender
+{
+    FilterViewController *filterVC = [[FilterViewController alloc] initWithNibName:@"FilterViewController" bundle:nil];
+    filterVC.delegate = self;
+    filterVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popPC = filterVC.popoverPresentationController;
+    filterVC.popoverPresentationController.sourceRect = ((UIButton*)sender).frame;
+    filterVC.popoverPresentationController.sourceView = self.view;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPC.delegate = self;
+    [self presentViewController:filterVC animated:YES completion:nil];
+}
+
+-(void)resetFilters
+{
+    tableDataArray = [PostRLMObject allObjects];
+    [tableView reloadData];
 }
 
 #pragma mark - Table View Datasource
@@ -149,6 +187,60 @@
     cell.detailTextLabel.text = [postItem.postId stringValue];
     
     return cell;
+}
+
+#pragma mark - Popover Presentation Controller Delegate
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection
+{
+    return UIModalPresentationPopover;
+}
+
+-(UIViewController*)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style
+{
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
+    return navController;
+}
+
+#pragma mark - Filter Delegate
+
+-(void)filterValuesShouldApplyWithCityValue:(NSString *)city
+{
+    if ([city isEqualToString:@""] || [city isEqual:[NSNull null]])
+    {
+        return;
+    }
+    
+    RLMResults *allResults = [PostRLMObject allObjects];
+    NSMutableArray *signerIds = [NSMutableArray new];
+    for (PostRLMObject *postItem in allResults)
+    {
+        NSNumber *signerId = [postItem valueForKeyPath:@"signerId"];
+        if (signerId != nil)
+        {
+            [signerIds addObject:signerId];
+        }
+    }
+    const int maxCount = 1000;
+    NSMutableArray *allFilteringSignerIds = [NSMutableArray new];
+    dispatch_group_t group = dispatch_group_create();
+    for (int i=0;i<[signerIds count];i+=maxCount)
+    {
+        dispatch_group_enter(group);
+        int count = MIN((int)signerIds.count - i, maxCount);
+        NSArray *signerIdsPortion = [signerIds subarrayWithRange:NSMakeRange(i, count)];
+        NSString *signerIdsPortionString = [signerIdsPortion componentsJoinedByString:@", "];
+        [apiManager users:signerIdsPortionString fromSelectedCIty:city completeBlock:^(NSArray *filteringSignerIds) {
+            dispatch_group_leave(group);
+            [allFilteringSignerIds addObjectsFromArray:filteringSignerIds];
+        }];
+    }
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSString *filteringSignerIdsString = [allFilteringSignerIds componentsJoinedByString:@", "];
+        NSString *predicateString = [NSString stringWithFormat:@"signerId IN {%@}", filteringSignerIdsString];
+        tableDataArray = [PostRLMObject objectsWhere:predicateString];
+        [tableView reloadData];
+    });
 }
 
 @end
