@@ -21,6 +21,8 @@
 		AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F41FA38D28006AF6AD /* PostsViewController.m */; };
 		AB06D0F91FA390B1006AF6AD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F81FA390B1006AF6AD /* Post.m */; };
 		AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A911FA8726900E55E46 /* PostRLMObject.m */; };
+		AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A941FAC78AD00E55E46 /* FilterViewController.m */; };
+		AB404A971FAC78AD00E55E46 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB404A951FAC78AD00E55E46 /* FilterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		AB06D0F81FA390B1006AF6AD /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		AB404A901FA8726900E55E46 /* PostRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostRLMObject.h; sourceTree = "<group>"; };
 		AB404A911FA8726900E55E46 /* PostRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostRLMObject.m; sourceTree = "<group>"; };
+		AB404A931FAC78AD00E55E46 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		AB404A941FAC78AD00E55E46 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		AB404A951FAC78AD00E55E46 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		DE559720414107443A614C5B /* libPods-VKFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +111,9 @@
 				AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */,
 				AB06D0F31FA38D28006AF6AD /* PostsViewController.h */,
 				AB06D0F41FA38D28006AF6AD /* PostsViewController.m */,
+				AB404A931FAC78AD00E55E46 /* FilterViewController.h */,
+				AB404A941FAC78AD00E55E46 /* FilterViewController.m */,
+				AB404A951FAC78AD00E55E46 /* FilterViewController.xib */,
 				AB06D0DB1FA36646006AF6AD /* Main.storyboard */,
 				AB06D0DE1FA36646006AF6AD /* Assets.xcassets */,
 				AB06D0E01FA36646006AF6AD /* LaunchScreen.storyboard */,
@@ -208,6 +216,7 @@
 				AB06D0E21FA36646006AF6AD /* LaunchScreen.storyboard in Resources */,
 				AB06D0DF1FA36646006AF6AD /* Assets.xcassets in Resources */,
 				AB06D0EA1FA36884006AF6AD /* Podfile in Resources */,
+				AB404A971FAC78AD00E55E46 /* FilterViewController.xib in Resources */,
 				AB06D0DD1FA36646006AF6AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */,
+				AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */,
 				AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */,
 				AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */,
 				AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */,
