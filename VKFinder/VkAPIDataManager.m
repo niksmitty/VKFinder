@@ -10,6 +10,28 @@
 
 @implementation VkAPIDataManager
 
+-(void)users:(NSString*)userIds fromSelectedCIty:(NSString*)selectedCity completeBlock:(void (^)(NSArray*))completeBlock
+{
+    VKRequest *request = [[VKApi users] get:@{@"user_ids": userIds, @"fields": @"city"}];
+    
+    [request executeWithResultBlock:^(VKResponse *response) {
+        NSArray *filteredUsers = [response.json filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSDictionary *d, NSDictionary* bindings) {
+            return [d[@"city"][@"title"] isEqualToString:selectedCity];
+        }]];
+        NSMutableArray *filteredUserIds = [NSMutableArray new];
+        for (NSDictionary *userInfo in filteredUsers)
+        {
+            [filteredUserIds addObject:userInfo[@"id"]];
+        }
+        if (completeBlock)
+        {
+            completeBlock(filteredUserIds);
+        }
+    } errorBlock:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
 -(void)getAllItemsIterativelyOfMethod:(NSString*)method withParameters:(NSDictionary*)parameters
 {
     int offset = 0;
