@@ -20,6 +20,8 @@
 		AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */; };
 		AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F41FA38D28006AF6AD /* PostsViewController.m */; };
 		AB06D0F91FA390B1006AF6AD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F81FA390B1006AF6AD /* Post.m */; };
+		AB0AD3C01FB2ED19005CC417 /* CommentRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */; };
+		AB0AD3C31FB2F192005CC417 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */; };
 		AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A911FA8726900E55E46 /* PostRLMObject.m */; };
 		AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A941FAC78AD00E55E46 /* FilterViewController.m */; };
 		AB404A971FAC78AD00E55E46 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB404A951FAC78AD00E55E46 /* FilterViewController.xib */; };
@@ -47,6 +49,10 @@
 		AB06D0F41FA38D28006AF6AD /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		AB06D0F71FA390B1006AF6AD /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		AB06D0F81FA390B1006AF6AD /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		AB0AD3BE1FB2ED19005CC417 /* CommentRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentRLMObject.h; sourceTree = "<group>"; };
+		AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentRLMObject.m; sourceTree = "<group>"; };
+		AB0AD3C11FB2F192005CC417 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		AB404A901FA8726900E55E46 /* PostRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostRLMObject.h; sourceTree = "<group>"; };
 		AB404A911FA8726900E55E46 /* PostRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostRLMObject.m; sourceTree = "<group>"; };
 		AB404A931FAC78AD00E55E46 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 				AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */,
 				AB06D0F31FA38D28006AF6AD /* PostsViewController.h */,
 				AB06D0F41FA38D28006AF6AD /* PostsViewController.m */,
+				AB0AD3C11FB2F192005CC417 /* CommentsViewController.h */,
+				AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */,
 				AB404A931FAC78AD00E55E46 /* FilterViewController.h */,
 				AB404A941FAC78AD00E55E46 /* FilterViewController.m */,
 				AB404A951FAC78AD00E55E46 /* FilterViewController.xib */,
@@ -138,6 +146,8 @@
 				AB06D0F81FA390B1006AF6AD /* Post.m */,
 				AB404A901FA8726900E55E46 /* PostRLMObject.h */,
 				AB404A911FA8726900E55E46 /* PostRLMObject.m */,
+				AB0AD3BE1FB2ED19005CC417 /* CommentRLMObject.h */,
+				AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -284,10 +294,12 @@
 			files = (
 				AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */,
 				AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */,
+				AB0AD3C31FB2F192005CC417 /* CommentsViewController.m in Sources */,
 				AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */,
 				AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */,
 				AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */,
 				AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */,
+				AB0AD3C01FB2ED19005CC417 /* CommentRLMObject.m in Sources */,
 				AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */,
 				AB06D0D41FA36646006AF6AD /* main.m in Sources */,
 				AB06D0F91FA390B1006AF6AD /* Post.m in Sources */,

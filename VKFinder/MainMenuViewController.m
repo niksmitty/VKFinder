@@ -33,4 +33,9 @@
     [self performSegueWithIdentifier:@"GET_POSTS" sender:self];
 }
 
+-(IBAction)getComments:(id)sender
+{
+    [self performSegueWithIdentifier:@"GET_COMMENTS" sender:self];
+}
+
 @end

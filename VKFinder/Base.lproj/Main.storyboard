@@ -65,17 +65,26 @@
                                     <action selector="getPosts:" destination="GnZ-MX-WZt" eventType="touchUpInside" id="e6D-bi-hKl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDU-sH-5hd">
+                                <rect key="frame" x="136.5" y="358" width="101" height="30"/>
+                                <state key="normal" title="Get comments"/>
+                                <connections>
+                                    <action selector="getComments:" destination="GnZ-MX-WZt" eventType="touchUpInside" id="ub8-IO-dq8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CNT-Tz-6On" firstAttribute="top" secondItem="Oso-0l-aPX" secondAttribute="bottom" constant="319" id="A7f-cF-fX9"/>
                             <constraint firstItem="Oso-0l-aPX" firstAttribute="leading" secondItem="2vk-bs-c2b" secondAttribute="leading" constant="152" id="PKi-j7-A58"/>
+                            <constraint firstItem="mDU-sH-5hd" firstAttribute="centerX" secondItem="2vk-bs-c2b" secondAttribute="centerX" id="PZD-kT-8GZ"/>
                             <constraint firstAttribute="trailing" secondItem="Oso-0l-aPX" secondAttribute="trailing" constant="153" id="W54-Gs-ehl"/>
                             <constraint firstItem="Oso-0l-aPX" firstAttribute="top" secondItem="cHX-0X-IYX" secondAttribute="bottom" constant="254" id="mtI-8b-DoV"/>
+                            <constraint firstItem="mDU-sH-5hd" firstAttribute="top" secondItem="Oso-0l-aPX" secondAttribute="bottom" constant="10" id="sba-Es-wUe"/>
                         </constraints>
                     </view>
                     <connections>
                         <segue destination="b0r-KV-5GZ" kind="show" identifier="GET_POSTS" id="QhX-Yv-3SK"/>
+                        <segue destination="U6h-mP-fN5" kind="show" identifier="GET_COMMENTS" id="otR-hd-y9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxu-sx-oGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +175,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMu-XH-tjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2796" y="123.68815592203899"/>
+        </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="QLl-gz-TOn">
+            <objects>
+                <viewController id="U6h-mP-fN5" customClass="CommentsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8i0-lC-Gcl"/>
+                        <viewControllerLayoutGuide type="bottom" id="R0p-BZ-qPe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yID-cd-Ghs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHf-vd-zIL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="833"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="asw-Kx-spB">
