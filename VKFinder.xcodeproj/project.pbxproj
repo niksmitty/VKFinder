@@ -10,21 +10,21 @@
 		40220B549D4A874493C87AFB /* libPods-VKFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE559720414107443A614C5B /* libPods-VKFinder.a */; };
 		AB06D0D41FA36646006AF6AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D31FA36646006AF6AD /* main.m */; };
 		AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D61FA36646006AF6AD /* AppDelegate.m */; };
-		AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0D91FA36646006AF6AD /* ViewController.m */; };
 		AB06D0DD1FA36646006AF6AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0DB1FA36646006AF6AD /* Main.storyboard */; };
 		AB06D0DF1FA36646006AF6AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0DE1FA36646006AF6AD /* Assets.xcassets */; };
 		AB06D0E21FA36646006AF6AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0E01FA36646006AF6AD /* LaunchScreen.storyboard */; };
 		AB06D0EA1FA36884006AF6AD /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0E91FA36884006AF6AD /* Podfile */; };
-		AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */; };
 		AB06D0EF1FA3826E006AF6AD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AB06D0EE1FA3826E006AF6AD /* .gitignore */; };
 		AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */; };
-		AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F41FA38D28006AF6AD /* PostsViewController.m */; };
-		AB06D0F91FA390B1006AF6AD /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = AB06D0F81FA390B1006AF6AD /* Post.m */; };
-		AB0AD3C01FB2ED19005CC417 /* CommentRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */; };
-		AB0AD3C31FB2F192005CC417 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */; };
-		AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A911FA8726900E55E46 /* PostRLMObject.m */; };
-		AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB404A941FAC78AD00E55E46 /* FilterViewController.m */; };
-		AB404A971FAC78AD00E55E46 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB404A951FAC78AD00E55E46 /* FilterViewController.xib */; };
+		ABF2153A1FC7095800A18723 /* CommentRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215351FC7095700A18723 /* CommentRLMObject.m */; };
+		ABF2153B1FC7095800A18723 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215371FC7095700A18723 /* Post.m */; };
+		ABF2153C1FC7095800A18723 /* PostRLMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215391FC7095700A18723 /* PostRLMObject.m */; };
+		ABF215481FC7099600A18723 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2153E1FC7099600A18723 /* CommentsViewController.m */; };
+		ABF215491FC7099600A18723 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215401FC7099600A18723 /* FilterViewController.m */; };
+		ABF2154A1FC7099600A18723 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF215411FC7099600A18723 /* FilterViewController.xib */; };
+		ABF2154B1FC7099600A18723 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215431FC7099600A18723 /* MainMenuViewController.m */; };
+		ABF2154C1FC7099600A18723 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215451FC7099600A18723 /* PostsViewController.m */; };
+		ABF2154D1FC7099600A18723 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215471FC7099600A18723 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,31 +33,31 @@
 		AB06D0D31FA36646006AF6AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB06D0D51FA36646006AF6AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB06D0D61FA36646006AF6AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AB06D0D81FA36646006AF6AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB06D0D91FA36646006AF6AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AB06D0DC1FA36646006AF6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB06D0DE1FA36646006AF6AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB06D0E11FA36646006AF6AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB06D0E31FA36646006AF6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB06D0E91FA36884006AF6AD /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB06D0EB1FA37CC4006AF6AD /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
-		AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		AB06D0EE1FA3826E006AF6AD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkAPIDataManager.h; sourceTree = "<group>"; };
 		AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkAPIDataManager.m; sourceTree = "<group>"; };
-		AB06D0F31FA38D28006AF6AD /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
-		AB06D0F41FA38D28006AF6AD /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
-		AB06D0F71FA390B1006AF6AD /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		AB06D0F81FA390B1006AF6AD /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		AB0AD3BE1FB2ED19005CC417 /* CommentRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentRLMObject.h; sourceTree = "<group>"; };
-		AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentRLMObject.m; sourceTree = "<group>"; };
-		AB0AD3C11FB2F192005CC417 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
-		AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
-		AB404A901FA8726900E55E46 /* PostRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostRLMObject.h; sourceTree = "<group>"; };
-		AB404A911FA8726900E55E46 /* PostRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostRLMObject.m; sourceTree = "<group>"; };
-		AB404A931FAC78AD00E55E46 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
-		AB404A941FAC78AD00E55E46 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
-		AB404A951FAC78AD00E55E46 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		ABF215341FC7095700A18723 /* CommentRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentRLMObject.h; path = Models/CommentRLMObject.h; sourceTree = "<group>"; };
+		ABF215351FC7095700A18723 /* CommentRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentRLMObject.m; path = Models/CommentRLMObject.m; sourceTree = "<group>"; };
+		ABF215361FC7095700A18723 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Models/Post.h; sourceTree = "<group>"; };
+		ABF215371FC7095700A18723 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Models/Post.m; sourceTree = "<group>"; };
+		ABF215381FC7095700A18723 /* PostRLMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostRLMObject.h; path = Models/PostRLMObject.h; sourceTree = "<group>"; };
+		ABF215391FC7095700A18723 /* PostRLMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostRLMObject.m; path = Models/PostRLMObject.m; sourceTree = "<group>"; };
+		ABF2153D1FC7099600A18723 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentsViewController.h; path = ViewControllers/CommentsViewController.h; sourceTree = "<group>"; };
+		ABF2153E1FC7099600A18723 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentsViewController.m; path = ViewControllers/CommentsViewController.m; sourceTree = "<group>"; };
+		ABF2153F1FC7099600A18723 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterViewController.h; path = ViewControllers/FilterViewController.h; sourceTree = "<group>"; };
+		ABF215401FC7099600A18723 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FilterViewController.m; path = ViewControllers/FilterViewController.m; sourceTree = "<group>"; };
+		ABF215411FC7099600A18723 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterViewController.xib; path = ViewControllers/FilterViewController.xib; sourceTree = "<group>"; };
+		ABF215421FC7099600A18723 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = ViewControllers/MainMenuViewController.h; sourceTree = "<group>"; };
+		ABF215431FC7099600A18723 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = ViewControllers/MainMenuViewController.m; sourceTree = "<group>"; };
+		ABF215441FC7099600A18723 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = ViewControllers/PostsViewController.h; sourceTree = "<group>"; };
+		ABF215451FC7099600A18723 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = ViewControllers/PostsViewController.m; sourceTree = "<group>"; };
+		ABF215461FC7099600A18723 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = "<group>"; };
+		ABF215471FC7099600A18723 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewControllers/ViewController.m; sourceTree = "<group>"; };
 		D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		DE559720414107443A614C5B /* libPods-VKFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,22 +106,12 @@
 		AB06D0D11FA36646006AF6AD /* VKFinder */ = {
 			isa = PBXGroup;
 			children = (
-				AB06D0F61FA39093006AF6AD /* Model */,
-				AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */,
-				AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */,
+				AB06D0F61FA39093006AF6AD /* Models */,
+				ABF215331FC707C400A18723 /* ViewControllers */,
 				AB06D0D51FA36646006AF6AD /* AppDelegate.h */,
 				AB06D0D61FA36646006AF6AD /* AppDelegate.m */,
-				AB06D0D81FA36646006AF6AD /* ViewController.h */,
-				AB06D0D91FA36646006AF6AD /* ViewController.m */,
-				AB06D0EB1FA37CC4006AF6AD /* MainMenuViewController.h */,
-				AB06D0EC1FA37CC4006AF6AD /* MainMenuViewController.m */,
-				AB06D0F31FA38D28006AF6AD /* PostsViewController.h */,
-				AB06D0F41FA38D28006AF6AD /* PostsViewController.m */,
-				AB0AD3C11FB2F192005CC417 /* CommentsViewController.h */,
-				AB0AD3C21FB2F192005CC417 /* CommentsViewController.m */,
-				AB404A931FAC78AD00E55E46 /* FilterViewController.h */,
-				AB404A941FAC78AD00E55E46 /* FilterViewController.m */,
-				AB404A951FAC78AD00E55E46 /* FilterViewController.xib */,
+				AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */,
+				AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */,
 				AB06D0DB1FA36646006AF6AD /* Main.storyboard */,
 				AB06D0DE1FA36646006AF6AD /* Assets.xcassets */,
 				AB06D0E01FA36646006AF6AD /* LaunchScreen.storyboard */,
@@ -139,17 +129,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AB06D0F61FA39093006AF6AD /* Model */ = {
+		AB06D0F61FA39093006AF6AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AB06D0F71FA390B1006AF6AD /* Post.h */,
-				AB06D0F81FA390B1006AF6AD /* Post.m */,
-				AB404A901FA8726900E55E46 /* PostRLMObject.h */,
-				AB404A911FA8726900E55E46 /* PostRLMObject.m */,
-				AB0AD3BE1FB2ED19005CC417 /* CommentRLMObject.h */,
-				AB0AD3BF1FB2ED19005CC417 /* CommentRLMObject.m */,
+				ABF215361FC7095700A18723 /* Post.h */,
+				ABF215371FC7095700A18723 /* Post.m */,
+				ABF215381FC7095700A18723 /* PostRLMObject.h */,
+				ABF215391FC7095700A18723 /* PostRLMObject.m */,
+				ABF215341FC7095700A18723 /* CommentRLMObject.h */,
+				ABF215351FC7095700A18723 /* CommentRLMObject.m */,
 			);
-			name = Model;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		ABF215331FC707C400A18723 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABF215461FC7099600A18723 /* ViewController.h */,
+				ABF215471FC7099600A18723 /* ViewController.m */,
+				ABF215421FC7099600A18723 /* MainMenuViewController.h */,
+				ABF215431FC7099600A18723 /* MainMenuViewController.m */,
+				ABF215441FC7099600A18723 /* PostsViewController.h */,
+				ABF215451FC7099600A18723 /* PostsViewController.m */,
+				ABF2153D1FC7099600A18723 /* CommentsViewController.h */,
+				ABF2153E1FC7099600A18723 /* CommentsViewController.m */,
+				ABF2153F1FC7099600A18723 /* FilterViewController.h */,
+				ABF215401FC7099600A18723 /* FilterViewController.m */,
+				ABF215411FC7099600A18723 /* FilterViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CF5790316CD734ACC04C1F25 /* Frameworks */ = {
@@ -222,11 +230,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF2154A1FC7099600A18723 /* FilterViewController.xib in Resources */,
 				AB06D0EF1FA3826E006AF6AD /* .gitignore in Resources */,
 				AB06D0E21FA36646006AF6AD /* LaunchScreen.storyboard in Resources */,
 				AB06D0DF1FA36646006AF6AD /* Assets.xcassets in Resources */,
 				AB06D0EA1FA36884006AF6AD /* Podfile in Resources */,
-				AB404A971FAC78AD00E55E46 /* FilterViewController.xib in Resources */,
 				AB06D0DD1FA36646006AF6AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,17 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB06D0ED1FA37CC4006AF6AD /* MainMenuViewController.m in Sources */,
-				AB404A961FAC78AD00E55E46 /* FilterViewController.m in Sources */,
-				AB0AD3C31FB2F192005CC417 /* CommentsViewController.m in Sources */,
-				AB06D0DA1FA36646006AF6AD /* ViewController.m in Sources */,
-				AB404A921FA8726900E55E46 /* PostRLMObject.m in Sources */,
-				AB06D0F51FA38D28006AF6AD /* PostsViewController.m in Sources */,
+				ABF2153B1FC7095800A18723 /* Post.m in Sources */,
+				ABF215491FC7099600A18723 /* FilterViewController.m in Sources */,
+				ABF2153C1FC7095800A18723 /* PostRLMObject.m in Sources */,
+				ABF2154B1FC7099600A18723 /* MainMenuViewController.m in Sources */,
+				ABF2154C1FC7099600A18723 /* PostsViewController.m in Sources */,
+				ABF2154D1FC7099600A18723 /* ViewController.m in Sources */,
 				AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */,
-				AB0AD3C01FB2ED19005CC417 /* CommentRLMObject.m in Sources */,
+				ABF215481FC7099600A18723 /* CommentsViewController.m in Sources */,
 				AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */,
 				AB06D0D41FA36646006AF6AD /* main.m in Sources */,
-				AB06D0F91FA390B1006AF6AD /* Post.m in Sources */,
+				ABF2153A1FC7095800A18723 /* CommentRLMObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
