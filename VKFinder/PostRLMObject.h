@@ -10,8 +10,13 @@
 
 @interface PostRLMObject : RLMObject
 
+// идентификатор записи
 @property NSNumber<RLMInt> *postId;
+
+// идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем
 @property NSNumber<RLMInt> *signerId;
+
+// текст записи
 @property NSString *text;
 
 @end
