@@ -10,7 +10,7 @@
 
 @implementation VkAPIDataManager
 
--(void)users:(NSString*)userIds fromSelectedCIty:(NSString*)selectedCity completeBlock:(void (^)(NSArray*))completeBlock
+-(void)users:(NSString*)userIds fromSelectedCity:(NSString*)selectedCity completeBlock:(void (^)(NSArray*))completeBlock
 {
     VKRequest *request = [[VKApi users] get:@{@"user_ids": userIds, @"fields": @"city"}];
     

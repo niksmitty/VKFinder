@@ -20,6 +20,6 @@
 @property (nonatomic, weak) id<VkAPIDataManagerDelegate> delegate;
 
 -(void)getAllItemsIterativelyOfMethod:(NSString*)method withParameters:(NSDictionary*)parameters;
--(void)users:(NSString*)userIds fromSelectedCIty:(NSString*)selectedCity completeBlock:(void (^)(NSArray*))completeBlock;
+-(void)users:(NSString*)userIds fromSelectedCity:(NSString*)selectedCity completeBlock:(void (^)(NSArray*))completeBlock;
 
 @end

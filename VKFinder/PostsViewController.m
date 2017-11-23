@@ -147,7 +147,7 @@
     bottomPanel.hidden = NO;
     progressView.progress = 0.;
 
-    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{VK_API_OWNER_ID: @"-67648156"/*@"-86830443"*/, VK_API_COUNT: @(100)}];
+    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443", VK_API_COUNT: @(100)}];
 }
 
 -(void)filterItems:(id)sender
@@ -230,7 +230,7 @@
         int count = MIN((int)signerIds.count - i, maxCount);
         NSArray *signerIdsPortion = [signerIds subarrayWithRange:NSMakeRange(i, count)];
         NSString *signerIdsPortionString = [signerIdsPortion componentsJoinedByString:@", "];
-        [apiManager users:signerIdsPortionString fromSelectedCIty:city completeBlock:^(NSArray *filteringSignerIds) {
+        [apiManager users:signerIdsPortionString fromSelectedCity:city completeBlock:^(NSArray *filteringSignerIds) {
             dispatch_group_leave(group);
             [allFilteringSignerIds addObjectsFromArray:filteringSignerIds];
         }];
