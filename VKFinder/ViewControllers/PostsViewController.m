@@ -18,7 +18,8 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self setupUI];
@@ -29,6 +30,10 @@
     // Initialize VkAPIDataManager
     apiManager = [VkAPIDataManager new];
     apiManager.delegate = self;
+    
+    // Initialize RealmDBManager
+    dbManager = [RealmDBManager new];
+    dbManager.delegate = self;
     
     // Set realm notification block
     __weak typeof(self) weakSelf = self;
@@ -91,7 +96,7 @@
 
 -(void)dataBatchWasReceived:(NSArray *)responsesBatch withCompletionPercentage:(float)percent
 {
-    [self insertDataBatchIntoDatabase:responsesBatch];
+    [dbManager insertDataBatchIntoDatabase:responsesBatch];
     
     progressView.progress = percent;
     if (percent == 1.)
@@ -100,33 +105,11 @@
     }
 }
 
-#pragma mark - Actions with Database
+#pragma mark - RealmDBManager Delegate
 
--(void)insertDataBatchIntoDatabase:(NSArray*)dataBatch
+-(void)objectInfoIsReady:(NSDictionary *)objInfo forAddingToGeneralArray:(NSMutableArray *)array
 {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        NSMutableArray *posts = [NSMutableArray new];
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        [dataBatch enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            VKResponse *response = (VKResponse*)obj;
-            [response.json[@"items"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                NSDictionary *postInfo = (NSDictionary*)obj;
-                [self addNewPost:postInfo toPostsArray:posts];
-            }];
-        }];
-        [realm addObjects:posts];
-        [realm commitWriteTransaction];
-    });
-}
-
--(void)deleteAllObjectsFromDatabase
-{
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm deleteObjects:[PostRLMObject allObjectsInRealm:realm]];
-    [realm commitWriteTransaction];
+    [self addNewPost:objInfo toPostsArray:array];
 }
 
 #pragma mark - Actions
@@ -142,12 +125,16 @@
 
 -(void)refreshAllItems
 {
-    [self deleteAllObjectsFromDatabase];
+    [dbManager deleteFromDatabaseAllObjectsOfClass:[PostRLMObject class]];
     
     bottomPanel.hidden = NO;
     progressView.progress = 0.;
 
-    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443", VK_API_COUNT: @(100)}];
+    [apiManager getAllItemsIterativelyOfMethod:@"wall.get" withParameters:@{
+                                                                            VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443",
+                                                                            VK_API_COUNT: @(100)
+                                                                            }
+    ];
 }
 
 -(void)filterItems:(id)sender
@@ -211,16 +198,8 @@
         return;
     }
     
-    RLMResults *allResults = [PostRLMObject allObjects];
-    NSMutableArray *signerIds = [NSMutableArray new];
-    for (PostRLMObject *postItem in allResults)
-    {
-        NSNumber *signerId = [postItem valueForKeyPath:@"signerId"];
-        if (signerId != nil)
-        {
-            [signerIds addObject:signerId];
-        }
-    }
+    NSArray *signerIds = [dbManager getAllNonnullValuesOfField:@"signerId" ofClass:[PostRLMObject class]];
+    
     const int maxCount = 1000;
     NSMutableArray *allFilteringSignerIds = [NSMutableArray new];
     dispatch_group_t group = dispatch_group_create();

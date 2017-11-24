@@ -18,7 +18,8 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     [self setupUI];
@@ -29,6 +30,10 @@
     // Initialize VkAPIDataManager
     apiManager = [VkAPIDataManager new];
     apiManager.delegate = self;
+    
+    // Initialize RealmDBManager
+    dbManager = [RealmDBManager new];
+    dbManager.delegate = self;
     
     // Set realm notification block
     __weak typeof(self) weakSelf = self;
@@ -68,32 +73,107 @@
     [refreshButton setShowsTouchWhenHighlighted:YES];
     UIBarButtonItem *refreshBtn = [[UIBarButtonItem alloc] initWithCustomView:refreshButton];
     
-    self.navigationItem.rightBarButtonItems = @[refreshBtn];
+    UIImage *filterImage = [UIImage imageNamed:@"addFilters"];
+    UIButton *filterButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [filterButton setBackgroundImage:filterImage forState:UIControlStateNormal];
+    [filterButton addTarget:self action:@selector(filterItems:) forControlEvents:UIControlEventTouchUpInside];
+    [filterButton setShowsTouchWhenHighlighted:YES];
+    UIBarButtonItem *filterBtn = [[UIBarButtonItem alloc] initWithCustomView:filterButton];
+    
+    UIImage *resetFiltersImage = [UIImage imageNamed:@"resetFilters"];
+    UIButton *resetFiltersButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [resetFiltersButton setBackgroundImage:resetFiltersImage forState:UIControlStateNormal];
+    [resetFiltersButton addTarget:self action:@selector(resetFilters) forControlEvents:UIControlEventTouchUpInside];
+    [resetFiltersButton setShowsTouchWhenHighlighted:YES];
+    UIBarButtonItem *resetFiltersBtn = [[UIBarButtonItem alloc] initWithCustomView:resetFiltersButton];
+    
+    self.navigationItem.rightBarButtonItems = @[refreshBtn, filterBtn, resetFiltersBtn];
 }
 
 #pragma mark - VkAPIDataManager Delegate
 
 -(void)dataBatchWasReceived:(NSArray *)responsesBatch withCompletionPercentage:(float)percent
 {
-    /*[self insertDataBatchIntoDatabase:responsesBatch];
+    [dbManager insertDataBatchIntoDatabase:responsesBatch];
     
-    progressView.progress = percent;
+    /*progressView.progress = percent;
     if (percent == 1.)
     {
         bottomPanel.hidden = YES;
     }*/
 }
 
+#pragma mark - RealmDBManager Delegate
+
+-(void)objectInfoIsReady:(NSDictionary *)objInfo forAddingToGeneralArray:(NSMutableArray *)array
+{
+    [self addNewComment:objInfo toCommentsArray:array];
+}
+
 #pragma mark - Actions
+
+-(void)addNewComment:(NSDictionary*)commentInfo toCommentsArray:(NSMutableArray*)comments
+{
+    CommentRLMObject *commentItem = [CommentRLMObject new];
+    commentItem.commentId = commentInfo[@"id"]?commentInfo[@"id"]:[NSNull null];
+    commentItem.signerId = commentInfo[@"from_id"]?commentInfo[@"from_id"]:[NSNull null];
+    commentItem.text = commentInfo[@"text"]?commentInfo[@"text"]:[NSNull null];
+    [comments addObject:commentItem];
+}
 
 -(void)refreshAllItems
 {
-    /*[self deleteAllObjectsFromDatabase];
-    
-    bottomPanel.hidden = NO;
+    /*bottomPanel.hidden = NO;
     progressView.progress = 0.;*/
     
-    [apiManager getAllItemsIterativelyOfMethod:@"wall.getComments" withParameters:@{VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443", VK_API_COUNT: @(100)}];
+    NSArray *postIds = [dbManager getAllNonnullValuesOfField:@"postId" ofClass:[PostRLMObject class]];
+    
+    if ([postIds count] == 0)
+    {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Info"
+                                                                       message:@"First of all, please get posts"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        [dbManager deleteFromDatabaseAllObjectsOfClass:[CommentRLMObject class]];
+        
+        for (NSNumber *postId in postIds)
+        {
+            [apiManager getAllItemsIterativelyOfMethod:@"wall.getComments" withParameters:@{
+                                                                                            VK_API_OWNER_ID: /*@"-67648156"*/@"-86830443",
+                                                                                            VK_API_COUNT: @(100),
+                                                                                            VK_API_POST_ID: postId
+                                                                                           }
+            ];
+        }
+    }
+}
+
+-(void)filterItems:(id)sender
+{
+    FilterViewController *filterVC = [[FilterViewController alloc] initWithNibName:@"FilterViewController" bundle:nil];
+    filterVC.delegate = self;
+    filterVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popPC = filterVC.popoverPresentationController;
+    filterVC.popoverPresentationController.sourceRect = ((UIButton*)sender).frame;
+    filterVC.popoverPresentationController.sourceView = self.view;
+    popPC.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popPC.delegate = self;
+    [self presentViewController:filterVC animated:YES completion:nil];
+}
+
+-(void)resetFilters
+{
+    tableDataArray = [CommentRLMObject allObjects];
+    [tableView reloadData];
 }
 
 #pragma mark - Table View Datasource
@@ -114,6 +194,52 @@
     cell.detailTextLabel.text = [commentItem.commentId stringValue];
     
     return cell;
+}
+
+#pragma mark - Popover Presentation Controller Delegate
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection
+{
+    return UIModalPresentationPopover;
+}
+
+-(UIViewController*)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style
+{
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller.presentedViewController];
+    return navController;
+}
+
+#pragma mark - Filter Delegate
+
+-(void)filterValuesShouldApplyWithCityValue:(NSString *)city
+{
+    if ([city isEqualToString:@""] || [city isEqual:[NSNull null]])
+    {
+        return;
+    }
+    
+    NSArray *signerIds = [dbManager getAllNonnullValuesOfField:@"signerId" ofClass:[CommentRLMObject class]];
+    
+    const int maxCount = 1000;
+    NSMutableArray *allFilteringSignerIds = [NSMutableArray new];
+    dispatch_group_t group = dispatch_group_create();
+    for (int i=0;i<[signerIds count];i+=maxCount)
+    {
+        dispatch_group_enter(group);
+        int count = MIN((int)signerIds.count - i, maxCount);
+        NSArray *signerIdsPortion = [signerIds subarrayWithRange:NSMakeRange(i, count)];
+        NSString *signerIdsPortionString = [signerIdsPortion componentsJoinedByString:@", "];
+        [apiManager users:signerIdsPortionString fromSelectedCity:city completeBlock:^(NSArray *filteringSignerIds) {
+            dispatch_group_leave(group);
+            [allFilteringSignerIds addObjectsFromArray:filteringSignerIds];
+        }];
+    }
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSString *filteringSignerIdsString = [allFilteringSignerIds componentsJoinedByString:@", "];
+        NSString *predicateString = [NSString stringWithFormat:@"signerId IN {%@}", filteringSignerIdsString];
+        tableDataArray = [CommentRLMObject objectsWhere:predicateString];
+        [tableView reloadData];
+    });
 }
 
 @end
