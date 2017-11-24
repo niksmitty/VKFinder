@@ -25,6 +25,7 @@
 		ABF2154B1FC7099600A18723 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215431FC7099600A18723 /* MainMenuViewController.m */; };
 		ABF2154C1FC7099600A18723 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215451FC7099600A18723 /* PostsViewController.m */; };
 		ABF2154D1FC7099600A18723 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF215471FC7099600A18723 /* ViewController.m */; };
+		ABF215501FC7129E00A18723 /* RealmDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2154F1FC7129E00A18723 /* RealmDBManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		ABF215451FC7099600A18723 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = ViewControllers/PostsViewController.m; sourceTree = "<group>"; };
 		ABF215461FC7099600A18723 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = "<group>"; };
 		ABF215471FC7099600A18723 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewControllers/ViewController.m; sourceTree = "<group>"; };
+		ABF2154E1FC7129E00A18723 /* RealmDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealmDBManager.h; sourceTree = "<group>"; };
+		ABF2154F1FC7129E00A18723 /* RealmDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealmDBManager.m; sourceTree = "<group>"; };
 		D86727A02A76345E0373C9FC /* Pods-VKFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VKFinder/Pods-VKFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		DE559720414107443A614C5B /* libPods-VKFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +115,8 @@
 				AB06D0D61FA36646006AF6AD /* AppDelegate.m */,
 				AB06D0F01FA386F4006AF6AD /* VkAPIDataManager.h */,
 				AB06D0F11FA386F4006AF6AD /* VkAPIDataManager.m */,
+				ABF2154E1FC7129E00A18723 /* RealmDBManager.h */,
+				ABF2154F1FC7129E00A18723 /* RealmDBManager.m */,
 				AB06D0DB1FA36646006AF6AD /* Main.storyboard */,
 				AB06D0DE1FA36646006AF6AD /* Assets.xcassets */,
 				AB06D0E01FA36646006AF6AD /* LaunchScreen.storyboard */,
@@ -309,6 +314,7 @@
 				AB06D0F21FA386F4006AF6AD /* VkAPIDataManager.m in Sources */,
 				ABF215481FC7099600A18723 /* CommentsViewController.m in Sources */,
 				AB06D0D71FA36646006AF6AD /* AppDelegate.m in Sources */,
+				ABF215501FC7129E00A18723 /* RealmDBManager.m in Sources */,
 				AB06D0D41FA36646006AF6AD /* main.m in Sources */,
 				ABF2153A1FC7095800A18723 /* CommentRLMObject.m in Sources */,
 			);
